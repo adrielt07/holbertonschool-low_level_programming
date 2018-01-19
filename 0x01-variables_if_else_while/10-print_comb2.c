@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main -
- * Result: 
+ * main - print 00 - 99
+ * Result: 0 if successful
  */
 
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 	int i = '0';
 
 	for (n = '0'; n <= '9'; n++)
-	{	
+	{
 		for (i = '0'; i <= '9'; i++)
 		{
 		putchar(n);
@@ -24,5 +24,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-		
 }
