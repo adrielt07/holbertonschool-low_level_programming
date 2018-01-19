@@ -8,13 +8,13 @@ int main(void)
 {
 	char n = 'a';
 	char i = '0';
-	
-	while(i <= '9')
+
+	while (i <= '9')
 	{
 		putchar(i);
 		i++;
 	}
-	while(n < 'g')
+	while (n < 'g')
 	{
 		putchar(n);
 		n++;
