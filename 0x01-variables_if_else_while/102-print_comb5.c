@@ -17,7 +17,7 @@ for (a = '0'; a <= '9'; a++)
 			for (d = '0'; d <= '9'; d++)
 			{
 			if (b == d && a < c || c >= a && b < d)
-			{a;
+			{
 			putchar(a);
 			putchar(b);
 			putchar(' ');
