@@ -17,8 +17,7 @@ for (a = '0'; a <= '9'; a++)
 			for (d = '0'; d <= '9'; d++)
 			{
 			if (b == d && a < c || c >= a && b < d)
-			{
-			putchar(' ');
+			{a;
 			putchar(a);
 			putchar(b);
 			putchar(' ');
@@ -26,6 +25,7 @@ for (a = '0'; a <= '9'; a++)
 			putchar(d);
 			if (a < '9' || b < '8' || c < '9' || d < '9')
 			putchar(',');
+			putchar(' ');
 			}
 			}
 		}
