@@ -16,15 +16,16 @@ for (a = '0'; a <= '9'; a++)
 		{
 			for (d = '0'; d <= '9'; d++)
 			{
-			if (c >= a && d > b)
+			if (b == d && a < c || c >= a && b < d)
 			{
+			putchar(' ');
 			putchar(a);
 			putchar(b);
 			putchar(' ');
 			putchar(c);
 			putchar(d);
+			if (a < '9' || b < '8' || c < '9' || d < '9')
 			putchar(',');
-			putchar(' ');
 			}
 			}
 		}
