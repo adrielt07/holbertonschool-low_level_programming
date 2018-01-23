@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * main - call holberton header to use 
  * print_alphabet function to print
@@ -7,8 +8,13 @@
  * Return: 0 if successful
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	int n;
+	
+	for (n = 'a'; n <= 'z'; n++)
+	{
+	_putchar(n);
+	}
+	_putchar('\n');
 }
