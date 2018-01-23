@@ -1,5 +1,9 @@
 #include "holberton.h"
-
+/**
+ * main - prints holberton using _putchar
+ *
+ * Return: 0 if successful
+ */
 int main(void)
 {
 	_putchar('H');
