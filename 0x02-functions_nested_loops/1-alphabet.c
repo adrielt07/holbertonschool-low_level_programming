@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - call holberton header to use
+ * print_alphabet - call holberton header to use
  * print_alphabet function to print
  * alphabet from a to z
  *
