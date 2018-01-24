@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *
+ * times_table: prints table multiplication
  */
 
 void times_table(void)
