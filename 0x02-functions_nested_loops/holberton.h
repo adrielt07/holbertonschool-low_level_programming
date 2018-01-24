@@ -1,15 +1,12 @@
-#include <stdio.h>
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
+
 /**
  *
  */
 
-void print_alphabet(void)
-{
-int n;
+int _putchar(char c);
 
-	for(n = 'a'; n <= 'z'; n++)
-	{
-		putchar(n);
-	}
-	putchar('\n');
-}
+void print_alphabet(void);
+
+#endif
