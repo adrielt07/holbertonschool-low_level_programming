@@ -12,6 +12,7 @@ int main(void)
 	unsigned long int b;
 	unsigned long int c;
 	unsigned long int sum;
+
 	b = 0;
 	c = 1;
 	sum = 1;
@@ -21,11 +22,11 @@ int main(void)
 		sum = b + c;
 		b = c;
 		c = sum;
-		printf ("%lu", sum);
-		if(a < 49)
+		printf("%lu", sum);
+		if (a < 49)
 		{
-			printf (", ");
+			printf(", ");
 		}
 	}
-	return 0;
+	return (0);
 }
