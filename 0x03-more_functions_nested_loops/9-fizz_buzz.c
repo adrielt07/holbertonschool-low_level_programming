@@ -14,24 +14,28 @@ int main(void)
 
 	for (n = 1; n <= 100; n++)
 	{
+		if (n != 1)
+		{
+			printf(" ");
+		}
 		j = n % 3;
 		k = n % 5;
 
 		if (j == 0 && k == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (j == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else if (k == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else
 		{
-		printf("%d ", n);
+			printf("%d", n);
 		}
 	}
 	putchar('\n');
