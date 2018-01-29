@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - prints diagonal line on terminal
+ * print_triangle - prints triangle
  *
- * @n: parameter number of time diagonal line is printed
+ * @size: parameter print size of triangle
  */
 
 void print_triangle(int size)
