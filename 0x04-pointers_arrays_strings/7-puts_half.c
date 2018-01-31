@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * puts_half - prints strings on position multiple by 2
+ * puts_half - prints half of string
  *
  * @str: takes string parameter
  */
