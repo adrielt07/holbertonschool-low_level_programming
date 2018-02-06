@@ -9,8 +9,8 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int n;
-	int i;
+	unsigned int n;
+	unsigned int i;
 
 	for (n = 0; s[n] != '\0'; n++)
 	{
