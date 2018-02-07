@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
- *
+ * print_chessboard - prints chessboard
+ * @a: takes array
  */
 
 void print_chessboard(char (*a)[8])
