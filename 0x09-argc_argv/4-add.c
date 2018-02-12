@@ -16,9 +16,13 @@ int helper(int argc, int n, int k, char **argv)
 {
 	for (n = 1; n < argc; n++)
 	{
-		for (k = 0; argv[n] != '\0' && k < strlen(argv[n]); k++)
+		for (k = 0; argv[n] != '\0' && k <= strlen(argv[n]); k++)
+		{
 			if (isdigit(argv[n][k]))
+			{
 				return (1);
+			}
+		}
 	}
 	return (0);
 }
