@@ -12,13 +12,13 @@
  * Return: 1 if digit. 0 if not
  */
 
-int helper(int argc, int n, int k, char **argv)
+int helper(int argc, int n, unsigned int k, char **argv)
 {
 	for (n = 1; n < argc; n++)
 	{
-		for (k = 0; argv[n] != '\0' && k <= strlen(argv[n]); k++)
+		for (k = 0; k < strlen(argv[n]); k++)
 		{
-			if (isdigit(argv[n][k]))
+			if (isdigit(argv[n][k] == 0))
 			{
 				return (1);
 			}
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	int n;
 	int i;
 
-	if (helper(argc, 1, 0, argv) == 0)
+	if (helper(argc, 1, 0, argv) == 1)
 	{
 		printf("Error\n");
 		return (1);
