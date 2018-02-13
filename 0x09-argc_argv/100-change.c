@@ -7,9 +7,9 @@
  * @argv: argument vector
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int n = atoi(argv[1]);
+	int n;
 	int c = 0;
 
 	if (n < 0)
@@ -17,8 +17,15 @@ int main(int argc, char **argv)
 		printf ("0\n");
 	}
 
+	if (argc == 1)
+	{
+		printf ("Error\n");
+	}
+
 	else if (argc == 2)
 	{
+		n = atoi(argv[1]);
+
 		while (n >= 25)
 		{
 			c++;
@@ -44,13 +51,6 @@ int main(int argc, char **argv)
 			c++;
 			n -= 1;
 		}
+		printf("%d\n", c);
 	}
-
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
-
-	printf("%d\n", c);
 }
