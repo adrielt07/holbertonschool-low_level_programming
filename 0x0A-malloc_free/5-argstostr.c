@@ -9,17 +9,20 @@
 
 int _strlen(char *s)
 {
-        int l = 0;
+	int l = 0;
 
-        while (s[l] != '\0')
-        {
-                l++;
-        }
-        return (l);
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+	return (l);
 }
 
 /**
- *
+ * argstostr - prints argument passed new line
+ * @ac: argument count
+ * @av: argument vector
+ * Return: Null if ac = 0 or av = null or pointer fail. Return value of a
  */
 
 char *argstostr(int ac, char **av)
@@ -27,7 +30,7 @@ char *argstostr(int ac, char **av)
 
 	char *a;
 	int i;
-	int j = 0;
+	int c = 0;
 	int n = 0;
 	int l = 0;
 
@@ -46,11 +49,9 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j] != '\0')
+		for (c = 0; av[i][c] != '\0'; c++, n++)
 		{
-			a[n] = av[i][j];
-			j++;
-			n++;
+			a[n] = av[i][c];
 		}
 		a[n] = '\n';
 		n++;
