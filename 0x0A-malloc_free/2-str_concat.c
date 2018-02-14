@@ -9,13 +9,13 @@
 
 int _strlen(char *s)
 {
-        int l = 0;
+	int l = 0;
 
-        while (s[l] != '\0')
-        {
-                l++;
-        }
-        return (l);
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+	return (l);
 }
 
 /**
@@ -40,7 +40,6 @@ char *str_concat(char *s1, char *s2)
 
 
 	s_ptr = malloc(sizeof(char) * l + 1);
-
 	if (s_ptr == NULL)
 		return (NULL);
 
@@ -56,5 +55,6 @@ char *str_concat(char *s1, char *s2)
 		}
 		c++;
 	}
+	s_ptr[c + 1] = '\0';
 	return (s_ptr);
 }
