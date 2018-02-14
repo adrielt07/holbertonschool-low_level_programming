@@ -26,7 +26,7 @@ int _strlen(char *s)
 
 char *_strdup(char *str)
 {
-	int l = _strlen(str) + 1;
+	int l = _strlen(str);
 	char *s_ptr;
 	int i = 0;
 
@@ -50,5 +50,6 @@ char *_strdup(char *str)
 		s_ptr[i] = str[i];
 		i++;
 	}
+	s_ptr[i] = '\0';
 	return (s_ptr);
 }
