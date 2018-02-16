@@ -48,13 +48,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		l2 = n;
 	}
 
-	t = _strlen(s1) + n;
+	t = l1 + n;
 
 	p = malloc(t + 1);
 	if (p == NULL)
 		return (NULL);
 
-	for (c = 0; c <= t; c++)
+	for (c = 0; c < t; c++)
 	{
 		if (c < l1)
 		{
