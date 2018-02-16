@@ -14,6 +14,12 @@ int *array_range(int min, int max)
 	int c;
 	int t = max - min;
 
+	if (max < 0)
+		max = max * -1;
+
+	if (min < 0)
+		min = min * -1;
+
 	if (min > max)
 		return (NULL);
 
