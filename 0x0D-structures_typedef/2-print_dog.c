@@ -1,10 +1,14 @@
-#include "stdlib.h"
-#include "stdio.h"
 #include "dog.h"
+#include "stdio.h"
+
+/**
+ * print_dog - start struct dog
+ * struct dog - uses struct dog
+ * @d: name of struct
+ */
 
 void print_dog(struct dog *d)
 {
-	d = malloc(sizeof(struct dog));
 	if (d == NULL)
 		return;
 
