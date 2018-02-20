@@ -8,17 +8,22 @@
 
 int _strlen(char *s)
 {
-        int l = 0;
+	int l = 0;
 
-        while (s[l] != '\0')
-        {
-                l++;
-        }
-        return (l);
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+	return (l);
 }
 
 /**
- *
+ * new_dog - new dog info
+ * @name: Dog's name
+ * @age: Dog's age
+ * @owner: Dog's owner
+ * Return: Null if Malloc failed or owner and name is empty
+ * else Return the value of nDog
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -39,7 +44,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (nName == NULL)
 	{
 
-		free (nDog);
+		free(nDog);
 		return (NULL);
 	}
 
