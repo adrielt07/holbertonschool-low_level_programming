@@ -1,0 +1,1 @@
+Struct and typedef project for Holberton School
