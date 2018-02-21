@@ -1,5 +1,5 @@
 #include "holberton.h"
-#define NULL 0
+
 /**
  * *_strchr - prints a string from char c
  * @s: string to search from
@@ -14,11 +14,10 @@ char *_strchr(char *s, char c)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == c)
-		{
-			return (s + i);
-		}
+			break;
 	}
 
-	return (NULL);
-
+	if (s[i] == c)
+		return (s + 1);
+	return ('\0');
 }
