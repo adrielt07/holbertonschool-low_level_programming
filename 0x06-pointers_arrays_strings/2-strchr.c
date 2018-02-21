@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+#define NULL 0
 /**
  * *_strchr - prints a string from char c
  * @s: string to search from
@@ -18,5 +18,7 @@ char *_strchr(char *s, char c)
 			return (s + i);
 		}
 	}
-	return ('\0');
+
+	return (NULL);
+
 }
