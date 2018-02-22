@@ -51,7 +51,7 @@ int op_div(int a, int b)
 		return (a / b);
 
 	printf("Error\n");
-	Exit(100);
+	exit(100);
 }
 
 /**
@@ -67,5 +67,5 @@ int op_mod(int a, int b)
 		return (a % b);
 
 	printf("Error\n");
-	Exit(100);
+	exit(100);
 }
