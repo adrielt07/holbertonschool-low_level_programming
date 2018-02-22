@@ -13,14 +13,14 @@
 int main(int argc, char **argv)
 {
 
+	int a = atoi(argv[1]);
+	int b = atoi(argv[3]);
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
 
 	printf("%d\n", get_op_func(argv[2])(a, b));
 }
