@@ -6,14 +6,14 @@
  * @array: takes an array
  * @size: size of an array
  * @cmp: function pointer to what needs to be compared to
- * Return: first position of element. Or -1 if error
+ * Return: An Int --- first position of element. Or -1 if error
  */
 
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int c;
 
-	if (size <= 0)
+	if (size <= 0 || array == NULL || cmp == NULL)
 		return (-1);
 
 
