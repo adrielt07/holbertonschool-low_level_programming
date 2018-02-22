@@ -4,7 +4,9 @@
 #include "stdio.h"
 
 /**
- *
+ * get_op_func - determines operator to use
+ * @s: string to compare
+ * Return: Operator to use
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -23,7 +25,7 @@ int (*get_op_func(char *s))(int, int)
 	for (c = 0; c <= 6; c++)
 	{
 
-		if(ops[c].op == NULL)
+		if (ops[c].op == NULL)
 		{
 			printf("Error\n");
 			break;
@@ -34,5 +36,5 @@ int (*get_op_func(char *s))(int, int)
 			return (ops[c].f);
 		}
 	}
-	exit (99);
+	exit(99);
 }
