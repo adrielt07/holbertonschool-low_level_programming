@@ -10,17 +10,20 @@
 
 int _strlen(const char *s)
 {
-        int l = 0;
+	int l = 0;
 
-        while (s[l] != '\0')
-        {
-                l++;
-        }
-        return (l);
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+	return (l);
 }
 
 /**
- * add_node
+ * add_node - add node at the beginning
+ * @head: new node to be created
+ * @str: value of new node
+ * Return: new node
  */
 
 list_t *add_node(list_t **head, const char *str)
