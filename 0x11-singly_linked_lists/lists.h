@@ -1,8 +1,5 @@
 #ifndef _linkedList_
-#define _linkedList
-#include <stdlib.h>
-#include <stdio.h>
-#include <stddef.h>
+#define _linkedList_
 
 /**
  * Prototypes & Struct
