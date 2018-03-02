@@ -2,7 +2,8 @@
 #include "stdlib.h"
 
 /**
- *
+ * free_list - free list_t
+ * @head: struct to be freed
  */
 
 void free_list(list_t *head)
