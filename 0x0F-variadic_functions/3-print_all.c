@@ -73,11 +73,12 @@ void print_all(const char * const format, ...)
 		{NULL, NULL},
 	};
 
-	int x, k, first;
+	int x, k;
+	char *first;
 	va_list arg_list;
 
 	x = 0;
-	first = 0;
+	first = "";
 	va_start(arg_list, format);
 
 	while (format[x] != '\0')
@@ -87,12 +88,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[x] == *t_format[k].s)
 			{
-				if (first > 0)
-				{
-					printf(", ");
-				}
+				printf("%s", first);
 				t_format[k].f(arg_list);
-				first++;
+				first = ", ";
 			}
 			k++;
 		}
