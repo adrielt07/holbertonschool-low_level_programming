@@ -80,26 +80,23 @@ void print_all(const char * const format, ...)
 	first = 0;
 	va_start(arg_list, format);
 
-	if (format != NULL)
+	while (format[x] != '\0')
 	{
-		while (format[x] != '\0')
+		k = 0;
+		while (t_format[k].s != NULL)
 		{
-			k = 0;
-			while (t_format[k].s != NULL)
+			if (format[x] == *t_format[k].s)
 			{
-				if (format[x] == *t_format[k].s)
+				if (first > 0)
 				{
-					if (first > 0)
-					{
-						printf(", ");
-					}
-					t_format[k].f(arg_list);
-					first++;
+					printf(", ");
 				}
-				k++;
+				t_format[k].f(arg_list);
+				first++;
 			}
-			x++;
+			k++;
 		}
+		x++;
 	}
 	va_end(arg_list);
 	printf("\n");
