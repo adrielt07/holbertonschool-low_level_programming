@@ -3,23 +3,20 @@
 /**
  * helper - helps find square root of a number
  * @i: takes int
- * @p: takes int
+ * @n: takes int
  * Return: 1 if n is 1, value of i if square exist and -1 if not
  */
 
-int helper(int i, int p)
+int helper(int i, int n)
 {
-	if (p == 1)
-		return (1);
-
-	if (i * i == p)
+	if (i * i == n)
 		return (i);
 
-	if (i * i > p)
+	if (i * i > n)
 		return (-1);
 
 	else
-		return (helper(i + 1, p));
+		return (helper(i + 1, n));
 }
 
 /**
@@ -30,5 +27,8 @@ int helper(int i, int p)
 
 int _sqrt_recursion(int n)
 {
+	if (n == 1)
+		return (1);
+
 	return (helper(2, n));
 }
