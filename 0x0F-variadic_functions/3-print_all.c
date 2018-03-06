@@ -27,10 +27,9 @@ void fmt_f(va_list valist)
 void fmt_s(va_list valist)
 {
 	char *s;
-	if (s == NULL)
-		s = "(nil)";
 	s = va_arg(valist, char *);
-
+	if (s == NULL)
+                s = "(nil)";
 	printf("%s", s);
 }
 
@@ -45,26 +44,33 @@ void print_all(const char * const format, ...)
 		{NULL, NULL},
 	};
 
+	int x, k, first;
 	va_list arg_list;
+	x = 0;
+	first = 0;
 	va_start(arg_list, format);
 
-	int x;
-	int k;
-
-	x = 0;
-	k = 0;
-
-	while (format[x])
+	if (format != NULL)
 	{
-		while (t_format[k].s != NULL)
+		while (format[x] != '\0')
 		{
-			if (*t_format[k].s == format[x])
+			k = 0;
+			while (t_format[k].s != NULL)
 			{
-				t_format[k].f(arg_list);
+				if (format[x] == *t_format[k].s)
+				{
+					if (first > 0)
+					{
+						printf(", ");
+					}
+					t_format[k].f(arg_list);
+					first++;
+				}
+				k++;
 			}
-			k++;
+			x++;
 		}
-		x++;
 	}
+	va_end (arg_list);
 	printf("\n");
 }
