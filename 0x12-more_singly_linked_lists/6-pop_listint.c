@@ -23,6 +23,6 @@ int pop_listint(listint_t **head)
 	{
 		current = current->next;
 		n = current->n;
-		return (n);
 	}
+	return (n);
 }
