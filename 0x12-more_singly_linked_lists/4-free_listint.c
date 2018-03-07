@@ -2,14 +2,14 @@
 
 /**
  * free_listint - free list
- * @head - refer to structure
+ * @head: refer to structure
  */
 
 void free_listint(listint_t *head)
 {
 	if (head != NULL)
 	{
-		free(head->next);
+		head = head->next;
 		free(head);
 	}
 }
