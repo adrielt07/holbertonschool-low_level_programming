@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listint_len - find length of elements
+ * _listint_len - find length of elements
  * @h: reference structure
  * Return: return # of elements
  */
@@ -38,16 +38,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (index + 1 > check)
 		return (-1);
 
-	if (current != NULL && head != NULL)
+	if (current != NULL || head != NULL)
 	{
 		while (current != NULL)
 		{
 			if (index == 0)
 			{
 				*head = current->next;
-				delete = current;
-				current = current->next;
-				free(delete);
+				free(current);
 				return (1);
 			}
 
