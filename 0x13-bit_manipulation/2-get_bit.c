@@ -13,8 +13,14 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int count = 0;
 	unsigned long int copy_n = n;
 
+
+
 	if (index == 0)
-		return (0);
+	{
+		if (n & 1)
+			return (1);
+		return(0);
+	}
 
 	if (index > 0)
 	{
