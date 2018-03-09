@@ -1,8 +1,24 @@
-#include "string.h"
 #include "holberton.h"
 
 /**
- * unsigned int binary_to_uint(const char *b) - conver binary to unsigned int
+ * _strlen - compute string const len
+ * @s: takes a string
+ * Return: length
+ */
+
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
+}
+
+/**
+ * binary_to_uint - conver binary to unsigned int
  * @b: string to be converted
  * Return: decimal number
  */
@@ -17,7 +33,7 @@ unsigned int binary_to_uint(const char *b)
 
 	if (b != NULL)
 	{
-		len = strlen(b) - 1;
+		len = _strlen(b) - 1;
 
 		while (len >= 0)
 		{
