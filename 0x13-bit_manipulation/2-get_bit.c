@@ -30,13 +30,14 @@ int get_bit(unsigned long int n, unsigned int index)
 		}
 
 		if (index > count)
-			return (0);
+			return (-1);
 
-		else if ((n >> count) & 1)
+		if ((n >> count) & 1)
 			return (1);
 		else
 			return (0);
 
 	}
-	return (-1);
+	else
+		return (-1);
 }
