@@ -22,9 +22,9 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (count >= 0)
 	{
-		if (((compare >>count) & 1) == 1)
+		if (((compare >> count) & 1) == 1)
 			result++;
 		count--;
 	}
-	return(result);
+	return (result);
 }
