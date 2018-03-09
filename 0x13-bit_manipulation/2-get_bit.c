@@ -10,29 +10,10 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 
-	unsigned int count = 0;
-	unsigned long int copy_n = n;
+	if (index > 64)
+		return (-1);
 
-	if (index == 0)
-	{
-		if (n & 1)
-			return (1);
-		return (0);
-	}
-
-	if (index > 0)
-	{
-
-		while (copy_n > 1)
-		{
-			copy_n >>= 1;
-			count++;
-		}
-		if (index > count)
-			return (-1);
-	}
-
-	if ((n >> count) & 1)
+	if ((n >> index) & 1)
 		return (1);
 	else
 		return (0);
