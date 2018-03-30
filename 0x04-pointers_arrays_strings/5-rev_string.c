@@ -12,17 +12,17 @@ void rev_string(char *s)
 
 	s_copy = s;
 
-	while(s[n])
+	while (s[n] != '\0')
 	{
 		n++;
 	}
 	n--;
 
-	while(n >= 0)
+	while (n >= 0)
 	{
 		s_copy[n] = s[i];
 		n--;
 		i++;
 	}
-	s[i] = '\0';
+	s[i++] = '\0';
 }
