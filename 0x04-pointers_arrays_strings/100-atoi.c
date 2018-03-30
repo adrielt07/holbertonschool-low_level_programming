@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
- *
+ * _atoi - convert char to int
+ * @s: takes string of numbers
+ * Return: an interger
  */
 
 int _atoi(char *s)
