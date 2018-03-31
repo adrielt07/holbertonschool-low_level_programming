@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include "stdlib.h"
 
 /**
  * rev_string - prints string in reverse
@@ -7,22 +8,32 @@
 
 void rev_string(char *s)
 {
-	int n = 0, i = 0;
-	char *s_copy;
-
-	s_copy = s;
+	int n = 0, i = 0, j = 0;
+	char *tmp;
 
 	while (s[n] != '\0')
 	{
 		n++;
 	}
-	n--;
 
-	while (n >= 0)
+	tmp = malloc(n * sizeof(char) + 1);
+	if (tmp == NULL)
 	{
-		s_copy[n] = s[i];
-		n--;
+		return;
+	}
+
+	while (s[i] != '\0')
+	{
+		tmp[i] = s[i];
 		i++;
 	}
-	s[i++] = '\0';
+	i--;
+
+	while (i >= 0)
+	{
+		s[j] = tmp[i];
+		i--;
+		j++;
+	}
+	s[n++] = '\0';
 }
