@@ -10,13 +10,13 @@ int _atoi(char *s)
 {
 	int n = 0;
 	unsigned int temp = 0;
-	unsigned int x;
+	int x = 1;
 
 	while (s[n])
 	{
-		if (s[n] == '-')
+		if (s[n] == '-' && (s[n + 1] >= '0' || s[n + 1] <= '9'))
 		{
-			x++;
+			x = -1;
 		}
 		n++;
 	}
