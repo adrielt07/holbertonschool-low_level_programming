@@ -8,15 +8,17 @@
 
 int _atoi(char *s)
 {
-	int n = 0;
+	unsigned int n = 0;
 	unsigned int temp = 0;
-	int x = 1;
+	int x = 0;
 
 	while (s[n])
 	{
-		if (s[n] == '-' && (s[n + 1] >= '0' || s[n + 1] <= '9'))
+		if (s[n] == '-')
 		{
-			x = -1;
+			x++;
+			if (s[n + 1] >= '0' && s[n + 1] <= '9')
+				break;
 		}
 		n++;
 	}
