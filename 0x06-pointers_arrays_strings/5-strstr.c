@@ -1,4 +1,5 @@
 #include "holberton.h"
+#define NULL 0
 
 /**
  * _strncmp - compares two strings, n bytes
@@ -36,7 +37,7 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0, j = 0;
 
 	if (needle[0] == '\0')
-		return ("\0");
+		return (NULL);
 
 	while (needle[j])
 	{
@@ -52,5 +53,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return ("\0");
+	return (NULL);
 }
