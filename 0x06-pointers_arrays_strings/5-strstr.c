@@ -35,8 +35,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, j = 0;
 
-	if (needle = "\0")
-		return ('\0');
+	if (needle[0] == '\0')
+		return ("\0");
 
 	while (needle[j])
 	{
@@ -52,5 +52,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		i++;
 	}
-	return ('\0');
+	return ("\0");
 }
