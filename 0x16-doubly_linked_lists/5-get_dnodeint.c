@@ -31,8 +31,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	n = dlistint_len(head) - 1;
 
-	printf("%d\n", n);
-
 	if (index > n)
 		return (NULL);
 
