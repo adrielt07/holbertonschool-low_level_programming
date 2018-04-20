@@ -47,6 +47,8 @@ char *cap_string(char *p)
 {
 	int i = 0;
 
+	p[i] = convert(p[i]);
+	i++;
 	while (p[i] != '\0')
 	{
 		if (checker(p[i]) == 1)
