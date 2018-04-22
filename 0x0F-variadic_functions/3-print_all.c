@@ -52,8 +52,6 @@ void fmt_s(va_list valist)
 	char *s;
 
 	s = va_arg(valist, char *);
-	if (s == NULL)
-		s = "(nil)";
 	printf("%s", s);
 }
 
@@ -78,7 +76,7 @@ void print_all(const char * const format, ...)
 	va_list arg_list;
 
 	if (format == NULL)
-	{	printf("\nil");
+	{	printf("nil\n");
 		return;
 	}
 
