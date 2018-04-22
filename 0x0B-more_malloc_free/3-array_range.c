@@ -13,17 +13,17 @@ int *array_range(int min, int max)
 {
 	int *p;
 	int c;
-	int t = max - min;
+	int t;
 
 	if (min > max)
 		return (NULL);
+	t = max - min + 2;
 
 	p = malloc(sizeof(int) * t);
-
 	if (p == NULL)
 		return (NULL);
 
-	for (c = 0; min < max; min++, c++)
+	for (c = 0; min <= max; min++, c++)
 	{
 		p[c] = min;
 	}
