@@ -1,3 +1,4 @@
+#include "holberton.h"
 #include "stdlib.h"
 
 /**
@@ -19,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (p == NULL)
 		return (NULL);
 
-	while (c < size)
+	while (c < nmemb)
 	{
 		p[c] = 0;
 		c++;
