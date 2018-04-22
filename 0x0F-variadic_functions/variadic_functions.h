@@ -3,7 +3,9 @@
 #include "stdarg.h"
 
 /**
- * Prototypes
+ * struct _format - structure takes string and match with func
+ * @s: pointer to string
+ * @f: pointer to function
  */
 
 typedef struct _format
