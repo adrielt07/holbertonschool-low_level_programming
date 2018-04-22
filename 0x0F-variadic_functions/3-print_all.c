@@ -77,6 +77,11 @@ void print_all(const char * const format, ...)
 	char *first;
 	va_list arg_list;
 
+	if (format == NULL)
+	{	printf("\nil");
+		return ;
+	}
+
 	x = 0;
 	first = "";
 	va_start(arg_list, format);
