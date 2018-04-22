@@ -1,4 +1,3 @@
-#include "holberton.h"
 #include "stdlib.h"
 
 /**
@@ -11,7 +10,6 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *p;
-	void *ret;
 	unsigned int c = 0;
 
 	if (nmemb == 0 || size == 0)
@@ -26,7 +24,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		p[c] = 0;
 		c++;
 	}
-	ret = p;
 
-	return (ret);
+	return (p);
 }
