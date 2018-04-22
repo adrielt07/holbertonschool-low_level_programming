@@ -14,12 +14,13 @@ int *array_range(int min, int max)
 	int *p;
 	int c;
 	int t;
-
+	int size = 0;
 	if (min > max)
 		return (NULL);
-	t = max - min + 2;
 
+	size = sizeof(int) * (t + 1);
 	p = malloc(sizeof(int) * t);
+	printf("%d\n", size);
 	if (p == NULL)
 		return (NULL);
 
