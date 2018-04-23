@@ -1,7 +1,8 @@
 #include "holberton.h"
+#include "stdio.h"
 
 /**
- * *_strncat - concatenates two strings
+ * _strncat - concatenates two strings
  *
  * @dest: parameter that keep the value + concatenated string
  * @src: string to be concatenated by # of n
@@ -20,7 +21,7 @@ char *_strncat(char *dest, char *src, int n)
 		j++;
 	}
 
-	for (i = 0; src[i] < src[n]; i++)
+	for (i = 0; i < n; i++)
 	{
 		dest[j + i] = src[i];
 	}
