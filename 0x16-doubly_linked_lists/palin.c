@@ -47,17 +47,18 @@ int main(void)
 
 	while (i <= 999)
 	{
-		k = i;
-		while (k <= 999)
+		while (j <= 999)
 		{
-			product = palin(i * j);
+			product = palin(j * i);
 			if (product != 1)
-				if (product > challenger)
+				printf("Palindrome Products: %d\n", product);
+				if (product > winning)
 					winning = product;
-			challenger = winning;
-			k++; j++;
+/*				else
+					winning = challenger;
+*/			j++;
 		}
-		j = 0;
+		j = 100;
 		i++;
 	}
 	printf("Highest value: %u\n", winning);
