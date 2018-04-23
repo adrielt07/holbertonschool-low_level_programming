@@ -17,7 +17,11 @@ int _strlen_recursion(char *s)
 }
 
 /**
- *
+ * _checker - takes string and compare it from one end to another
+ * @s: string to compare
+ * @len: length of the string (its end)
+ * @zero: beginning of the string
+ * Return: 1 if it's a palindrome else 0
  */
 
 int _checker(char *s, int len, int zero)
@@ -41,10 +45,10 @@ int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
 	int zero = 0;
-	len--;
 
+	len--;
 	if (_checker(s, len, zero) == 1)
 		return (1);
 	else
-		return(0);
+		return (0);
 }
