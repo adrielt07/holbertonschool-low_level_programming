@@ -47,6 +47,8 @@ int is_palindrome(char *s)
 	int zero = 0;
 
 	len--;
+	if (len == 0)
+		return (1);
 	if (_checker(s, len, zero) == 1)
 		return (1);
 	else
