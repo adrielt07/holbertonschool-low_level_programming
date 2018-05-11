@@ -12,10 +12,10 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *ptr;
 
 	printf("{");
-	while(n < ht->size)
+	while (n < ht->size)
 	{
 		ptr = &(*ht->array[n]);
-		while(ptr != NULL)
+		while (ptr != NULL)
 		{
 			if (sep == 1)
 			{
@@ -29,24 +29,4 @@ void hash_table_print(const hash_table_t *ht)
 		n++;
 	}
 	printf("}\n");
-
-/**
-	printf("{");
-	while(n < ht->size)
-	{
-		while(ht->array[n] != NULL)
-		{
-			if (sep == 1)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-			printf("'%s': '%s'", (ht->array[n])->key, (ht->array[n])->value);
-			ht->array[n] = (ht->array[n])->next;
-			sep = 1;
-		}
-		n++;
-	}
-	printf("}\n");
-**/
 }
