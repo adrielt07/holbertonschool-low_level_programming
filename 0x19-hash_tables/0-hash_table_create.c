@@ -23,11 +23,5 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		free(new_table); return (NULL);
 	}
-
-	while (n < size)
-	{
-		new_table->array[n] = NULL;
-		n++;
-	}
 	return (new_table);
 }
