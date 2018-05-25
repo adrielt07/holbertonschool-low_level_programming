@@ -1,7 +1,16 @@
 #include "sort.h"
 #include "stdlib.h"
 
-void switcher(int *array, int idx1, int idx2, size_t size)
+/**
+ * swap - swaps the position of two integers at
+ * certain index then prints it
+ * @array: takes an array
+ * @idx1: first index
+ * @idx2: second index
+ * @size: size of an array
+ */
+
+void swap(int *array, int idx1, int idx2, size_t size)
 {
 	int temp = 0;
 
@@ -14,37 +23,27 @@ void switcher(int *array, int idx1, int idx2, size_t size)
 /**
  * bubble_sort - sorts an array of integers in ascending order
  * using Bubble sort algorithm
- * @array - takes an array
- * @size - size of the array
+ * @array: takes an array
+ * @size: size of the array
  */
 
 void bubble_sort(int *array, size_t size)
 {
 	size_t n = 0;
 
-	while (array[n + 1] != 0 && n < size)
+	while (array != NULL && n < size)
 	{
-		if (array[n] > array[n + 1])
+		if (n + 1 != size && array[n] > array[n + 1])
 		{
-			switcher(array, n, n+1, size);
+			swap(array, n, n + 1, size);
 		}
 		n++;
 	}
 	n = 0;
-	while (array[n + 1] != 0 && n < size)
+	while (array != NULL && n < size)
 	{
-		if (array[n] > array[n + 1])
+		if (n + 1 != size && array[n] > array[n + 1])
 			bubble_sort(array, size);
 		n++;
 	}
 }
-/**
-int main(void)
-{
-	int array[] = {5, 10, 15, 25, 20, 30, 45, 50, 26};
-
-	size_t n = sizeof(array) / sizeof(array[0]);
-	bubble_sort(array, n);
-	print_array(array, n);
-}
-*/
