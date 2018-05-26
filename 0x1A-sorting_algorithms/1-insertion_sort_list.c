@@ -8,27 +8,38 @@
 
 void helper(listint_t **ptr, listint_t **list)
 {
-	listint_t *current, *prv;
+	listint_t *current, *far, *front, *prv;
 
 	current = *ptr;
+
 	while(1)
 	{
-		if ((*ptr)->n > (*ptr)->prev->n || (*ptr)->prev == NULL)
+		if (current->prev == NULL || current->n > current->prev->n)
 			break;
 		else
 		{
-			prv = (*ptr)->prev;
-			(*ptr)->prev = prv->prev;
-			if ((*ptr)->prev != NULL)
-				((*ptr)->prev->next) = *ptr;
-			prv->next = (*ptr)->next;
-			if (prv->next != NULL)
-				prv->next->prev = prv;
-			(*ptr)->next = prv;
-			prv->prev = *ptr;
+			prv = current->prev;
+			if (current->next != NULL)
+				current->next->prev = prv;
+			prv->next = current->next;
+			if (prv->prev != NULL)
+				prv->prev->next = current;
+			current->prev = prv->prev;
+			prv->prev = current;
+			current->next = prv;
+			if (current->prev == NULL)
+				*list = current;
 		}
-		current = current->prev;
 		print_list(*list);
+/*
+		if (current->next != NULL)
+			current->next->prev = prv;
+		prv->next = current->next;
+		current->prev = prv->prev;
+		if (prv->prev != NULL)
+			prv->prev->next = current;
+		prv->prev = current;
+*/
 	}
 }
 
