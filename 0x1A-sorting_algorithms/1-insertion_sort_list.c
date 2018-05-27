@@ -62,7 +62,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *runner;
 
-	if (list_size(&(*list)) < 2 || list == NULL || *list == NULL)
+	if (list == NULL || *list == NULL || (list_size(&(*list)) < 2)
 		return;
 
 	runner = *list;
