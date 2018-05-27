@@ -41,6 +41,9 @@ unsigned int list_size(listint_t **list)
 	listint_t *runner = *list;
 	unsigned int count = 0;
 
+	if (list == NULL || runner->next == NULL)
+		return (count);
+
 	while (runner)
 	{
 		runner = runner->next;
@@ -60,7 +63,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *runner;
 
 	runner = *list;
-	if (list_size(&runner) < 2)
+	if (list_size(&runner) < 2 || list == NULL || *list == NULL)
 		return;
 
 	while (runner->next != NULL)
