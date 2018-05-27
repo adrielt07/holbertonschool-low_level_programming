@@ -1,5 +1,4 @@
 #include "sort.h"
-#include "stdio.h"
 
 /**
  * helper - swaps value in linked list
@@ -33,6 +32,24 @@ void helper(listint_t **ptr, listint_t **list)
 }
 
 /**
+ * list_size - counts how many elements in linked list
+ * @list: pointer at the beginning of the linked list
+ * Return: number of elements
+ */
+unsigned int list_size(listint_t **list)
+{
+	listint_t *runner = *list;
+	unsigned int count = 0;
+
+	while (runner)
+	{
+		runner = runner->next;
+		count++;
+	}
+	return (count);
+}
+
+/**
  * insertion_sort_list - sorts a doubly linked list of integer
  * in ascending order using the insertion sort algoritm
  * @list: takes double linked list
@@ -43,6 +60,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *runner;
 
 	runner = *list;
+	if (list_size(&runner) < 2)
+		return;
 
 	while (runner->next != NULL)
 	{
