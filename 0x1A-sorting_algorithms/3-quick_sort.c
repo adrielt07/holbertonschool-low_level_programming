@@ -1,102 +1,70 @@
 #include "sort.h"
 #include "stdio.h"
 
-int find_pivot(int *array, int last_index)
-{
-	int n = 0, value = array[last_index];
-
-	while(n < last_index)
-	{
-		if (value < array[n])
-			return (0);
-		n++;
-	}
-	return (1);
-}
-
 /**
- *
+ * swap - swaps the value of two integers
+ * @num1: pointer to first int
+ * @num2: pointer to second int
  */
-int *get_left(int *array, int *pivot)
+void swap(int *num1, int *num2, int *array, size_t size)
 {
-	int n = 0;
+	int temp = (*num1);
 
-	while(array[n])
-	{
-		if (*pivot < array[n])
-			return (&array[n]);
-		n++;
-	}
-	return (&(*pivot));
-}
-
-/**
- *
- */
-int *get_right(int *array, int *pivot, int *address, int pivot_index)
-{
-	int n = pivot_index;
-
-	while(n > 0)
-	{
-		if (&(*address) == &array[n])
-			break;
-		if (*pivot > array[n])
-			return (&array[n]);
-		n--;
-	}
-	return (&array[pivot_index]);
-}
-
-int sorted(int *array, size_t size)
-{
-	size_t n = 0;
-
-	while(n < size)
-	{
-		if (n + 1 != size && array[n] > array[n + 1])
-			return (0);
-		n++;
-	}
-	return (1);
-}
-
-void swapper(int *left, int *right, int *array, size_t size)
-{
-	int temp = (*left);
-
-	*left = (*right);
-	*right = temp;
+	*num1 = (*num2);
+	(*num2) = temp;
 	print_array(array, size);
 }
 
+int checker(int *array, int size)
+{
+	int n = 0;
+
+	for (n = 1; n < size; n++)
+	{
+		if (array[n] < array[n - 1])
+			return (0);
+	}
+	return (1);
+}
+
 /**
  *
  */
+void sorter(int *array, int wall, int pivot, int size)
+{
+	int i, num = 0;
+
+	if (pivot == 0)
+		return;
+	for (i = 0; i < size - 1; i++)
+	{
+		if (array[i] < array[pivot])
+		{
+			swap(&array[i], &array[wall + num], array, size);
+			num++;
+		}
+	}
+	if (array[pivot] > array[num + 1])
+		sorter(array, wall, pivot - 1, size);
+	if (array[pivot] < array[num + 1])
+	{
+		swap(&array[num], &array[pivot], array, size);
+		sorter(array, wall + num, pivot, size);
+	}
+}
+
+/**
+ * quick_sort - sorts an array in ascending order
+ * @array: array to sort
+ * @size: size of the array
+ */
 void quick_sort(int *array, size_t size)
 {
-	int *pivot, last_elm = size - 1;
-	int *left, *right;
-	size_t n = 0;
+	int pivot;
 
-	pivot = &array[last_elm];
-	if (array == NULL || size < 2)
+	if (size < 2)
 		return;
 
-	while(n < size - 1)
-	{
-		if (sorted(array, size) == 1)
-			break;
-
-		pivot = &array[last_elm];
-
-		left = get_left(array, pivot);
-		right = get_right(array, pivot, left, last_elm);
-		swapper(left, right, array, size);
-		if (find_pivot(array, last_elm) == 1)
-		{
-			last_elm--;
-		}
-		n++;
-	}
+	pivot = size - 1;
+	sorter(array, 0, pivot, size);
 }
