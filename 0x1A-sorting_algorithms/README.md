@@ -20,5 +20,8 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 - 2-selection_sort.c - sorts an array of integers in ascending order using Selection Sort Algorithm
 - 3-quick_sort.c - sorts an array in ascending order using Quick sort algorithm with Lomuto partition scheme
 
+#### Advance
+- 100-shell_sort - unfinished
+
 ### Authors
 Adriel Tolentino
