@@ -1,55 +1,66 @@
 #include "sort.h"
-#include "stdio.h"
 
 /**
  * swap - swaps the value of two integers
  * @num1: pointer to first int
  * @num2: pointer to second int
  */
-void swap(int *num1, int *num2, int *array, size_t size)
+void swap(int *num1, int *num2)
 {
-	int temp = (*num1);
+	int temp = *num1;
 
-	*num1 = (*num2);
-	(*num2) = temp;
-	print_array(array, size);
-}
-
-int checker(int *array, int size)
-{
-	int n = 0;
-
-	for (n = 1; n < size; n++)
-	{
-		if (array[n] < array[n - 1])
-			return (0);
-	}
-	return (1);
+	*num1 = *num2;
+	*num2 = temp;
 }
 
 /**
- *
+ * partition - create two subarrays of > pivot and < pivot
+ * @array: pointer to array
+ * @lo: index location of wall
+ * @hi: index location of pivot
+ * @size: takes the size of the array
+ * Return: new location of pivot
  */
-void sorter(int *array, int wall, int pivot, int size)
+int partition(int *array, int lo, int hi, int size)
 {
-	int i, num = 0;
+	int n, wall = lo - 1;
 
-	if (pivot == 0)
-		return;
-	for (i = 0; i < size - 1; i++)
+	for (n = lo; n < hi; n++)
 	{
-		if (array[i] < array[pivot])
+		if (array[n] <= array[hi])
 		{
-			swap(&array[i], &array[wall + num], array, size);
-			num++;
+			wall += 1;
+			if (n != wall)
+			{
+				swap(&array[wall], &array[n]);
+				print_array(array, size);
+			}
 		}
 	}
-	if (array[pivot] > array[num + 1])
-		sorter(array, wall, pivot - 1, size);
-	if (array[pivot] < array[num + 1])
+	if (array[wall + 1] > array[hi])
 	{
-		swap(&array[num], &array[pivot], array, size);
-		sorter(array, wall + num, pivot, size);
+		swap(&array[wall + 1], &array[n]);
+		print_array(array, size);
+	}
+	return (wall + 1);
+}
+
+/**
+ * sorter - sorts the array recursively
+ * @array: pointer to array
+ * @lo: index location of the wall
+ * @hi: index location of pivot
+ * @size: size of the array
+ */
+void sorter(int *array, int lo, int hi, int size)
+{
+	int pivot = 0;
+
+	if (lo < hi)
+	{
+		pivot = partition(array, lo, hi, size);
+		sorter(array, lo, pivot - 1, size);
+		sorter(array, pivot + 1, hi, size);
 	}
 }
 
@@ -62,7 +73,7 @@ void quick_sort(int *array, size_t size)
 {
 	int pivot;
 
-	if (size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	pivot = size - 1;
