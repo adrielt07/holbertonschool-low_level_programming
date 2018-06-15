@@ -1,102 +1,81 @@
 #include "sort.h"
-#include "stdio.h"
-
-int find_pivot(int *array, int last_index)
-{
-	int n = 0, value = array[last_index];
-
-	while(n < last_index)
-	{
-		if (value < array[n])
-			return (0);
-		n++;
-	}
-	return (1);
-}
 
 /**
- *
+ * swap - swaps the value of two integers
+ * @num1: pointer to first int
+ * @num2: pointer to second int
  */
-int *get_left(int *array, int *pivot)
+void swap(int *num1, int *num2)
 {
-	int n = 0;
+	int temp = *num1;
 
-	while(array[n])
-	{
-		if (*pivot < array[n])
-			return (&array[n]);
-		n++;
-	}
-	return (&(*pivot));
+	*num1 = *num2;
+	*num2 = temp;
 }
 
 /**
- *
+ * partition - create two subarrays of > pivot and < pivot
+ * @array: pointer to array
+ * @lo: index location of wall
+ * @hi: index location of pivot
+ * @size: takes the size of the array
+ * Return: new location of pivot
  */
-int *get_right(int *array, int *pivot, int *address, int pivot_index)
+int partition(int *array, int lo, int hi, int size)
 {
-	int n = pivot_index;
+	int n, wall = lo - 1;
 
-	while(n > 0)
+	for (n = lo; n < hi; n++)
 	{
-		if (&(*address) == &array[n])
-			break;
-		if (*pivot > array[n])
-			return (&array[n]);
-		n--;
+		if (array[n] <= array[hi])
+		{
+			wall += 1;
+			if (n != wall)
+			{
+				swap(&array[wall], &array[n]);
+				print_array(array, size);
+			}
+		}
 	}
-	return (&array[pivot_index]);
-}
-
-int sorted(int *array, size_t size)
-{
-	size_t n = 0;
-
-	while(n < size)
+	if (array[wall + 1] > array[hi])
 	{
-		if (n + 1 != size && array[n] > array[n + 1])
-			return (0);
-		n++;
+		swap(&array[wall + 1], &array[n]);
+		print_array(array, size);
 	}
-	return (1);
-}
-
-void swapper(int *left, int *right, int *array, size_t size)
-{
-	int temp = (*left);
-
-	*left = (*right);
-	*right = temp;
-	print_array(array, size);
+	return (wall + 1);
 }
 
 /**
- *
+ * sorter - sorts the array recursively
+ * @array: pointer to array
+ * @lo: index location of the wall
+ * @hi: index location of pivot
+ * @size: size of the array
+ */
+void sorter(int *array, int lo, int hi, int size)
+{
+	int pivot = 0;
+
+	if (lo < hi)
+	{
+		pivot = partition(array, lo, hi, size);
+		sorter(array, lo, pivot - 1, size);
+		sorter(array, pivot + 1, hi, size);
+	}
+}
+
+/**
+ * quick_sort - sorts an array in ascending order
+ * @array: array to sort
+ * @size: size of the array
  */
 void quick_sort(int *array, size_t size)
 {
-	int *pivot, last_elm = size - 1;
-	int *left, *right;
-	size_t n = 0;
+	int pivot;
 
-	pivot = &array[last_elm];
 	if (array == NULL || size < 2)
 		return;
 
-	while(n < size - 1)
-	{
-		if (sorted(array, size) == 1)
-			break;
-
-		pivot = &array[last_elm];
-
-		left = get_left(array, pivot);
-		right = get_right(array, pivot, left, last_elm);
-		swapper(left, right, array, size);
-		if (find_pivot(array, last_elm) == 1)
-		{
-			last_elm--;
-		}
-		n++;
-	}
+	pivot = size - 1;
+	sorter(array, 0, pivot, size);
 }
