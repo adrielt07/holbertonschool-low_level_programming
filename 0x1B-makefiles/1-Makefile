@@ -1,5 +1,5 @@
 CC=gcc
 SRC=holberton.c main.c
 
-holberton: $(SRC)
+all: $(SRC)
 	$(CC) $(SRC) -Wall -Wextra -pedantic -o holberton
