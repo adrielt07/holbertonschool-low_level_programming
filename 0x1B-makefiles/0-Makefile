@@ -1,0 +1,2 @@
+holberton: holberton.c main.c
+	$(CC) holberton.c main.c -Wall -Wextra -pedantic -o holberton
