@@ -20,4 +20,8 @@ def island_perimeter(grid):
                 if col < len(grid[row]):
                     if grid[row][col + 1] == 0:
                         perim += 1
+                if row == 0:
+                    perim += 1
+                if col == 0:
+                    perim += 1
     return perim
