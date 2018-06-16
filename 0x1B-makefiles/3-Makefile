@@ -13,9 +13,9 @@ $(NAME): $(OBJ)
 	$(CC) -Wall -Wextra -pedantic $(OBJ) -o $@
 
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) -f *~ $(NAME)
 oclean:
-	$(RM) *.o
+	$(RM) -f *.o
 
 fclean: oclean clean
 re: oclean all
