@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - print 00 - 99
- * Result: 0 if successful
+ * Return: 0 if successful
  */
 
 int main(void)
