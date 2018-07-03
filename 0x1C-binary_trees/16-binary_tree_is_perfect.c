@@ -10,9 +10,9 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 	if (node != NULL)
 	{
 		if (node->left == NULL && node->right == NULL)
-			return 1;
+			return (1);
 	}
-	return 0;
+	return (0);
 }
 
 /**
@@ -36,6 +36,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 /**
  * max_elem_calc - calculates the maximum posible number of node in binary tree
  * at certain level
+ * @height: takes height of binary tree
  * Return: number of possible node
  */
 int max_elem_calc(int height)
