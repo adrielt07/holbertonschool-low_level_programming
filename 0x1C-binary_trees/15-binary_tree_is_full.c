@@ -16,8 +16,8 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 }
 
 /**
- * binary_tree_height - measures the heigh of binary tree
- * @tree: pointer to node to measure height
+ * binary_tree_height - measures the height of binary tree
+ * @tree: pointer to node to measure height from
  * Return: return height
  */
 size_t binary_tree_height(const binary_tree_t *tree)
@@ -37,7 +37,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
  * max_elem_calc - calculates the maximum posible number of node in binary tree
  * at certain level
  * @height: takes height of binary tree
- * Return: number of possible node
+ * Return: number of possible nodes
  */
 int max_elem_calc(int height)
 {
@@ -59,7 +59,7 @@ int max_elem_calc(int height)
 
 /**
  * binary_tree_size - measure the size of Binary Tree
- * @tree: pointer to node to measure depth
+ * @tree: pointer to node to check from
  * Return: returns the size of binary
  */
 size_t binary_tree_size(const binary_tree_t *tree)
@@ -72,9 +72,9 @@ size_t binary_tree_size(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_full - checks if nodes are full from certain node
+ * binary_tree_is_full - checks if node and its sub trees are full
  * @tree: pointer to root node
- * Return: return 0 if tree is NULL, else 1
+ * Return: 1 if full, else 0
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
