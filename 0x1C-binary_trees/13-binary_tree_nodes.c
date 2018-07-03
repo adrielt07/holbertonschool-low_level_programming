@@ -2,7 +2,7 @@
 /**
  * is_parent - checks if node is a parent
  * @node: pointer to node that will be checked
- * Return: 0 if node is null or not a leaf, else 1
+ * Return: 0 if node is null or not a parent, else 1
  */
 int is_parent(const binary_tree_t *node)
 {
