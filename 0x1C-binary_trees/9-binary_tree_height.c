@@ -24,23 +24,11 @@ size_t binary_tree_height(const binary_tree_t *tree)
 {
 	size_t count = 0, count2 = 0;
 
-	if (tree == NULL)
+	if (tree == NULL || binary_tree_is_leaf(tree) == 1)
 		return (0);
-	if (tree->left != NULL)
-	{
-		if (binary_tree_is_leaf(tree->left) != 1)
-			++count;
-		binary_tree_height(tree->left);
-		++count;
-	}
-	if (tree->right != NULL)
-	{
-		if (binary_tree_is_leaf(tree->right) != 1)
-			++count2;
-		binary_tree_height(tree->right);
-		++count2;
-	}
-	if (count >= count2)
-		return (count);
-	return (count2);
+	count = binary_tree_height(tree->left);
+	count2 = binary_tree_height(tree->right);
+	if (count > count2)
+		return (count + 1);
+	return (count2 + 1);
 }
