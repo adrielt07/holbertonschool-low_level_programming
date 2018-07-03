@@ -1,33 +1,55 @@
 #include "binary_trees.h"
 /**
- * is_parent - checks if node is a parent
+ * binary_tree_is_leaf - checks if node is leaf
  * @node: pointer to node that will be checked
- * Return: 1 if node is a parent, else 0
+ * Return: 0 if node is null or not a leaf, else 1
  */
-int is_parent(const binary_tree_t *node)
+int binary_tree_is_leaf(const binary_tree_t *node)
 {
 	if (node != NULL)
 	{
-		if (node->left != NULL || node->right != NULL)
+		if (node->left == NULL && node->right == NULL)
 			return (1);
 	}
 	return (0);
 }
 
 /**
- * binary_tree_nodes - count how many nodes have atleast 1 child
+ * binary_tree_height - measures the heigh of binary tree
+ * @tree: pointer to node to measure height
+ * Return: return height
+ */
+size_t binary_tree_height(const binary_tree_t *tree)
+{
+	size_t count = 0, count2 = 0;
+
+	if (tree == NULL || binary_tree_is_leaf(tree) == 1)
+		return (0);
+	count = binary_tree_height(tree->left);
+	count2 = binary_tree_height(tree->right);
+	if (count > count2)
+		return (count + 1);
+	return (count2 + 1);
+}
+
+/**
+ * binary_tree_balance - measures the balance factor of binary tree
  * @tree: pointer to node to measure depth
  * Return: return number of parents, else 0
  */
-size_t binary_tree_nodes(const binary_tree_t *tree)
+int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t count = 0;
+	int num_l = 1, num_r = 1;
 
 	if (tree == NULL)
 		return (0);
-	count += binary_tree_nodes(tree->left);
-	count += binary_tree_nodes(tree->right);
-	if (is_parent(tree) == 1)
-		return (count + 1);
-	return (count);
+	if (tree->left != NULL)
+		num_l += binary_tree_height(tree->left);
+	else
+		num_l = 0;
+	if (tree->right != NULL)
+		num_r += binary_tree_height(tree->right);
+	else
+		num_r = 0;
+	return (num_l - num_r);
 }
