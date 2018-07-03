@@ -16,7 +16,7 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 
 /**
  * binary_tree_leaves - counts leaves
- * @tree: pointer to node to measure depth
+ * @tree: pointer to root node
  * Return: return number of leaves
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
