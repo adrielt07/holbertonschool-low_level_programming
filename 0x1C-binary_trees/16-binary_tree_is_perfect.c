@@ -52,8 +52,7 @@ int max_elem_calc(int height)
 		first_calc = 0;
 		height--;
 	}
-	if (count > 1)
-		count++;
+	count++;
 	return (count);
 }
 
