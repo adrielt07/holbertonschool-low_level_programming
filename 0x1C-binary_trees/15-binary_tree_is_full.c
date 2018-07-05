@@ -2,7 +2,8 @@
 
 /**
  * child_check - checks if a node only has one child
-
+ * @node: pointer to node
+ * Return: 1 if it only has one child, else 0
  */
 int child_check(const binary_tree_t *node)
 {
@@ -38,6 +39,7 @@ int binary_tree_is_leaf(const binary_tree_t *node)
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	int left = 0, right = 0;
+
 	if (tree == NULL)
 		return (0);
 	left = binary_tree_is_full(tree->left);
