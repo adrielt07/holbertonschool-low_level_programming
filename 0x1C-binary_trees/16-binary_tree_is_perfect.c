@@ -84,6 +84,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (0);
 
 	height = binary_tree_height(tree);
+	if (height == 0)
+		return (1);
 	max_elem = max_elem_calc(height);
 	if (max_elem == binary_tree_size(tree))
 		return (1);
