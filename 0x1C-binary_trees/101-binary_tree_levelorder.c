@@ -10,8 +10,6 @@ void traversal_print(const binary_tree_t *tree, void (*func)(int), int n)
 {
 	if (n == 0)
 		func(tree->n);
-	if (tree->right != NULL && tree->left == NULL)
-		return;
 	if (tree->left != NULL)
 		func(tree->left->n);
 	if (tree->right != NULL)
