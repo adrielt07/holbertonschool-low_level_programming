@@ -27,7 +27,8 @@ void traversal_print(const binary_tree_t *tree, void (*func)(int), int n)
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (tree == NULL || func == NULL)
+	if (tree == NULL || func == NULL || (tree->left == NULL
+					     && tree->right == NULL))
 		return;
 	traversal_print(tree, func, 0);
 }
