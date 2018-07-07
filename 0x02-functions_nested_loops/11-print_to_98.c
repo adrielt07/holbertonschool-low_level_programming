@@ -16,6 +16,6 @@ void print_to_98(int n)
 
 	else if (n > 98)
 		for (; cpy_n > 98; cpy_n--)
-			printf("%d ", cpy_n);
+			printf("%d, ", cpy_n);
 	printf("%d\n", 98);
 }
