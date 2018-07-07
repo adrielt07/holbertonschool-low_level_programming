@@ -1,3 +1,5 @@
+![30246160-ad8047a6-95a6-11e7-971c-ac53ade02de6](https://user-images.githubusercontent.com/33245729/42404727-90c73c38-8140-11e8-8db5-7e9f9d91525c.jpg)
+
 # Binary Trees
 
 ### Documentation
