@@ -41,18 +41,14 @@ size_t binary_tree_height(const binary_tree_t *tree)
  */
 int max_elem_calc(int height)
 {
-	int count = 0, first_calc = 1;
+	int count = 2;
 
 	while (height > 0)
 	{
-		if (first_calc == 1)
-			count += 1 * 2;
-		else
-			count += count * 2;
-		first_calc = 0;
+		count = count * 2;
 		height--;
 	}
-	count++;
+	count--;
 	return (count);
 }
 
