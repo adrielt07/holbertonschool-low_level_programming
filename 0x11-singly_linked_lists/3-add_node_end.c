@@ -13,9 +13,7 @@ int _strlen(const char *s)
 	int l = 0;
 
 	while (s[l] != '\0')
-	{
 		l++;
-	}
 	return (l);
 }
 
@@ -50,9 +48,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		while (current->next != NULL)
-		{
 			current = current->next;
-		}
 		current->next = newN;
 		return (newN);
 	}
