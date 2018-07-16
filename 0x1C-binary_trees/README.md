@@ -12,11 +12,12 @@
 - What is a complete, a full, a perfect, a balanced binary tree
 
 ## Installation
-- main folder - contains the example files for compilation
+- main folder - contains the example/test files for each function. For example, 0-main.c is a test file for file 0-binary_tree_node.c
 - Number correlates to the task number
-- compile with the following:
-  - gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c <#-main.c> <#-binary_tree>
-  - Task-0 compilation Example: gcc -Wall -Wextra -Werror -pedantic binary_tree_print.c 0-main.c 0-binary_tree_node.c -o 0-node
+- From the main folder, compile with the following:
+  - gcc <#-main.c> -L. -lBT
+  - Task-0 compilation Example: gcc 0-main.c -L. -lBT 
+  - Execute: ./a.out
 
 ## Operator Instruction
 - binary_tree_print.c - prints binary tree for visualisation purpose
