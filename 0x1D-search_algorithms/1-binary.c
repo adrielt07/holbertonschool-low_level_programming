@@ -1,24 +1,33 @@
 #include "search_algos.h"
 
+/**
+ * binary_recursion - helper function to help search for value using recursion
+ * @array: pointer to an array
+ * @beg: starting point for array
+ * @size: end point of the array
+ * @value: value to search for
+ * Return: index of when value is else -1
+ */
 
 int binary_recursion(int *array, size_t beg, size_t size, int value)
 {
-	size_t n, mid;
+	size_t n, mid, range;
 
-	mid = (size - beg) / 2 + beg;
-	n = beg;
-
-	if (beg >= size)
+	if (beg == size)
 		return (-1);
-	printf("Searching array: ");
-	while (n < size - 1)
+	n = beg;
+	printf("Searching in array: ");
+	while (n < size)
 	{
 		printf("%d", array[n]);
-		if (n != size - 2)
+		if (n != size - 1)
 			printf(", ");
 		n++;
 	}
 	printf("\n");
+
+	range = size - beg - 1;
+	mid = range / 2 + beg;
 	if (value == array[mid])
 		return (mid);
 
@@ -40,6 +49,6 @@ int binary_search(int *array, size_t size, int value)
 	if (array == NULL)
 		return (-1);
 	else
-		binary_recursion(array, 0, size, value);
-	return(-1);
+		return (binary_recursion(array, 0, size, value));
+
 }
