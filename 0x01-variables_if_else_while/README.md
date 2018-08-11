@@ -23,6 +23,3 @@ gcc -Wall -pedantic -Werror -Wextra 10-print_comb2.c -o 10-print_comb2
 - 10-print_comb2.c - prints the numbers from 00 to 99. Numbers must be separated by ', ' in ascending order with two digits. Putchar only. Can only use putchar five times. Variable of type char is not allowed.
 - 100-print_comb3.c - program that prints all possible different combinations of two digits. The two digits must be different (01 and 10 are considered the same combination of 0 and 1). Print only the smallest combination of two digits. Putchar only. Allowed to use it five times. Variable of type char is not allowed
 - 101-print_comb4.c - prints all possible different combinations of three digits. Same rule as 100-print_comb3 except I can use putchar six times.
-
-### Authors
-Adriel Tolentino
