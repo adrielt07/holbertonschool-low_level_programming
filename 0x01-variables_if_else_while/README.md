@@ -1,11 +1,10 @@
-# Monty Bytecode Interpreter
-
-### Documentation
+## 0x01. C - Variables, if, else, while
+Understanding of if, else and while loop in C programming language
 
 ## Installation
 - compile the main file with the following:
   - gcc -Wall -Werror -Wextra -pedantic <filename.c>
-- For Example:
+For Example:
 ```
 gcc -Wall -pedantic -Werror -Wextra 10-print_comb2.c -o 10-print_comb2
 ```
